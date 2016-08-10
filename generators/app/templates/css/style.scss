@@ -1,0 +1,220 @@
+@function px2rem( $px ){
+  @return $px / 64 * 1rem;
+}
+
+/* reset */
+* { margin: 0; padding: 0;}
+html, body { width: 100%; height: 100%; overflow: hidden;}
+.page-wrap { width: 100%; height: 100%;}
+.page {  width: 100%;  height: 100%;  -webkit-backface-visibility: hidden; -webkit-perspective: 1000;}
+
+.u-btn-play { position: absolute; top: px2rem(20); right: px2rem(20); width: px2rem(54); height: px2rem(54); display: block; background: url('../img/play.png') top center no-repeat; background-size: cover;}
+.u-btn-play.zanting { background-image: url('../img/pause.png');}
+
+/* 页面样式 */
+
+
+
+/* 横竖屏 和 动画样式 */
+#orientLayer { display: none;}
+
+@media screen and (min-aspect-ratio: 12/7) {
+  #orientLayer {
+    display: block;
+  }
+}
+
+.mod-orient-layer {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  z-index: 9997
+}
+
+.mod-orient-layer__content {
+  position: absolute;
+  width: 100%;
+  top: 45%;
+  margin-top: -75px;
+  text-align: center
+}
+
+.mod-orient-layer__icon-orient {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAADaCAMAAABU68ovAAAAXVBMVEUAAAD29vb////x8fH////////x8fH5+fn29vby8vL////5+fn39/f6+vr////x8fH////////+/v7////09PT////x8fH39/f////////////////////x8fH///+WLTLGAAAAHXRSTlMAIpML+gb4ZhHWn1c2gvHBvq1uKJcC6k8b187lQ9yhhboAAAQYSURBVHja7d3blpowFIDhTUIAOchZDkre/zE7ycySrbUUpsRN2/1fzO18KzEqxEVgTiZNfgmmtxRc8iaR8HNe8x4BtjQePKayYCIoyBSgvNNE1AkNSHqZyLqk97EgUCCHBzZ5mkg7ScvIJuIyOyXBRFxgpqWZyGsAZLB1KjsJi8nutHU4JCRbFRH8tmirI9k8Jx2sqNs8K/m0LQkrktO2crgcgXGB4AiTEsB0hJfo9MGgX7CGcYiYwQxmMOOvZwRhBG8tCoMXjBDeXvWCEcHbi14wgCBmMIMZzGAGM5jxETNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxY6E2rUQxnH2tz9cirlJFwFBJedaPnUv0M7++egPDE8iAJcIDmxwH5wwv9vUviw2kLbVO3TJU5uul/EyB0FoLp4x60PdGUd3qPurrWyjGGTc05u+1dcgI7/+tCCPARWGhH7o5Y7RCf+bH9ctXLp6v2BVDxfqz0oPXeSVaNtINo/1SXDv4dck8IIkbhtC2ol+iouEonTBCbYvVMnXOjxww6s/RFrBUpXHh/gw1rHj5d/qhYn9Gpk2FWh6xRBRX5Oj3Znh2Sq49/L6+y8pB26q9GbE2dbA2mVbx6I+7MfBglLCttm73ZQi7AD3iL4HqjFYJHSPRppqaUaJ3ATpGa+ckpGak2hRRMyqjGMkvl+xyFeSMwjAqcsZgGDdyhl0oNTnDN4yenJGZFGxNChP5/Y3efh6SM2rDOJMzboYxkDMqwyjIGcIw6F+io2FU1IxIm1JqRmgXSkvNKNCXeTpGrU0JNSO2c6LIGPgCS8AuDHz9ta0SXWDtxoDRH+MqlbC2Dt2G2JFRadtQZt2qq/orGowdGb2euxYiqWEpVWhTBnszoNAPdStuQwxqf0aocdWKW4Z+DfszIh8pxJqbuCE4YAC+4bm0evtipjpgJHeFnyyt1Ku2xa0bhjxr27p75rECNwyI9ZwvXkHq+7aTaMEV44YYy/spfgjgjNHaWW+GeUhGEX7tLlVinIFDDSgnOwhi1V6bU0b6tVS9eAERe863g4dRrtiHdc6o+nn5vtyVVgR79Cqt4uL6gfHPQyGqtP2vf7HADGbcYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JjhtOM+J/AgT008yDMkN/dPP9hzS8zAMQN3OEYeekp5YU7KOKXwVXqiY+QS7smcinGKABWdiBgpPJTSMHJ4KidhhPBUSMLw4CmPhKHgKUXCkHsygum71ftNSgCX6bsl8FQyfbcL5EdYsDk0R3j7aiA5wpt5AjKg/2gLJEBD/0Hf2OOf/vRrj6z/7GtP4B3nMKyjHA12kIPSjnJs3FEO0TvKkYJHOWCR+rjJH0Vn6fI5PjNbAAAAAElFTkSuQmCC");
+  display: inline-block;
+  width: 67px;
+  height: 109px;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -webkit-animation: rotation infinite 1.5s ease-in-out;
+  animation: rotation infinite 1.5s ease-in-out;
+  -webkit-background-size: 67px;
+  background-size: 67px
+}
+
+.mod-orient-layer__desc {
+  margin-top: 20px;
+  font-size: 15px;
+  color: #fff
+}
+
+.qr-box{
+  display: none;
+}
+
+/*上滑提示*/
+@-webkit-keyframes swipeMoveTop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 10px, 0);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -10px, 0);
+  }
+}
+
+/*左滑提示*/
+@-webkit-keyframes swipeMoveLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(10px, 0, 0);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(-10px, 0, 0);
+  }
+}
+
+@-webkit-keyframes slideToTop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100px, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInToRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-50px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes fadeInToLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(50px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes rotation {
+  10% { -webkit-transform: rotate(90deg)}
+  50%, 60% { -webkit-transform: rotate(0deg)}
+  90% { -webkit-transform: rotate(90deg)}
+  100% { -webkit-transform: rotate(90deg)}
+}
+
+@-webkit-keyframes rotate {
+  0% { -webkit-transform: rotate(0deg);}
+  100% { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+@-webkit-keyframes ToTop {
+  0% {
+    -webkit-transform: translate3d(0, 10px, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes MoveLeft {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-14300px, 0, 0);
+  }
+}
+
+.pageToTop { -webkit-animation: pageToTop .6s ease-in-out both; animation: pageToTop .6s ease-in-out both;}
+
+@-webkit-keyframes pageToTop {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+.pageToBottom { -webkit-animation: pageToBottom .6s ease-in-out both; animation: pageToBottom .6s ease-in-out both;}
+
+@-webkit-keyframes pageToBottom {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 100%, 0);
+  }
+}
+
+.slideToTop { -webkit-animation: slideToTop .6s ease-in-out both; animation: slideToTop .6s ease-in-out both;}
+
+@-webkit-keyframes slideToTop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, px2rem(100), 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+.rotate { -webkit-animation: rotate linear 2s infinite; animation: rotate linear 2s infinite;}
+
+@-webkit-keyframes rotate {
+  0% { -webkit-transform: rotate(0deg);}
+  100% { -webkit-transform: rotate(360deg);}
+}
