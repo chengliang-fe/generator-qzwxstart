@@ -22,16 +22,14 @@ module.exports = yeoman.Base.extend({
       done();
     }.bind(this));
   },
-
   writing: {
-    app: function(){
+    app: function () {
       //html
       this.fs.copyTpl(
-        this.templatePath('_index.html'),
-        this.destinationPath('index.html'), {
-          name: this.props.name
-        }
-      );
+      this.templatePath('_index.html'),
+      this.destinationPath('index.html'), {
+        name: this.props.name
+      });
 
       //css
       this.fs.copy(
@@ -42,19 +40,7 @@ module.exports = yeoman.Base.extend({
       //js
       this.fs.copy(
         this.templatePath('js/flexible.js'),
-        this.destinationPath('js/flexible.js'),
-        this.templatePath('js/PageSlider.js'),
-        this.destinationPath('js/PageSlider.js'),
-        this.templatePath('js/zepto.js'),
-        this.destinationPath('js/zepto.js')
-      );
-
-      //img
-      this.fs.copy(
-        this.templatePath('img/pause.png'),
-        this.destinationPath('img/pause.png'),
-        this.templatePath('img/play.png'),
-        this.destinationPath('img/play.png')
+        this.destinationPath('js/flexible.js')
       );
     }
   }
