@@ -10,7 +10,7 @@
         animationPlayOnce: false,
         dev: false,               //开发模式，传入数值，直接跳到正在开发的屏数
         musicUrl: false,          //是否需要背景音乐
-        shareUrl: 'http://phptest.guoxinad.com.cn/weixinshare/index.php', //默认分享方式
+        shareUrl: '', //默认分享方式
         baseUrl: '',
         onSwipeUp: function () {  //swipeUp 回调
         },
@@ -80,7 +80,7 @@
                 var $this = $(this),
                     $PageSliderWraper = $this.wrapInner('<div class="PageSlider__wraper"></div>').find('.PageSlider__wraper'),
                     height = $PageSliderWraper.height();
-                
+
                 //当子元素高度超过页面时，需滚完再切换
                 if (height > pageHeight) {
                     $this.data('height', height);
