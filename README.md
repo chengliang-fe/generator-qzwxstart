@@ -4,6 +4,12 @@
 
 ## 用法
 
+设置国内源，增加 `npm` 包的安装速度，如果安装 `cnpm`，可忽略。
+
+```
+npm config set registry https://registry.npm.taobao.org
+```
+
 先安装 `Yeoman`：
 
 ```
